@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-type Variant = "phosphor" | "outline-light" | "outline-dark";
+type Variant = "phosphor" | "primary" | "outline-light" | "outline-dark";
 type Size = "md" | "lg";
 
 const base =
@@ -14,6 +14,8 @@ const base =
 const variants: Record<Variant, string> = {
   phosphor:
     "bg-phosphor text-ink-900 hover:bg-phosphor-deep hover:text-ink-900",
+  primary:
+    "bg-ink-900 text-porcelain hover:bg-ink-800 hover:text-phosphor border border-steel-500/20",
   "outline-light":
     "border border-steel-300/45 text-porcelain hover:border-phosphor hover:text-phosphor",
   "outline-dark":

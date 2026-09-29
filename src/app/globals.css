@@ -1,98 +1,73 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   DESIGN SYSTEM — Mohammed Aouf / AI Digital Marketing
-   Direction: "instrument room / daylight" duotone.
-   Deep navy-ink sections  = the measurement room (where data lives).
-   Cool porcelain sections = daylight (where the human argument lives).
-   Gold = the single signal accent, used sparingly. Sapphire = the
-   secondary structural colour for diagrams, charts and glows.
-   Token names (ink/porcelain/steel/iris/phosphor) are kept stable on
-   purpose — only the hex values changed — so every component that
-   references them updates automatically.
+   DESIGN SYSTEM — Mohammed Aouf / Editorial Art Direction & Brand Identity
+   Direction: Editorial Magazine meets Elite Digital Growth Consultancy.
+   Warm architectural linen ground, crisp charcoal typography, rich photographic
+   plates, terracotta/amber editorial signal accents, and bespoke diagrams.
    ========================================================================== */
 
 @theme {
-  /* ---- Color tokens ---------------------------------------------------- */
-  --color-ink-900: #05070d;
-  --color-ink-800: #0a0f1e;
-  --color-ink-700: #111a33;
-  --color-ink-600: #1c2a4d;
-  --color-ink-500: #2b3d6b;
+  /* ---- Editorial Color Palette ---------------------------------------- */
+  --color-ink-950: #090a0d;
+  --color-ink-900: #0f1115;
+  --color-ink-800: #171920;
+  --color-ink-700: #22252f;
+  --color-ink-600: #303442;
+  --color-ink-500: #42485a;
 
-  --color-porcelain: #f3f2f0;
-  --color-porcelain-raised: #fafaf8;
-  --color-porcelain-sunk: #e7e5e1;
+  --color-porcelain: #f9f8f5;
+  --color-porcelain-raised: #ffffff;
+  --color-porcelain-sunk: #f0ede6;
+  --color-linen: #eae6dd;
 
-  --color-steel-700: #3f4c6b;
-  --color-steel-500: #5a6688;
-  --color-steel-300: #a6afc4;
+  --color-steel-700: #424754;
+  --color-steel-500: #687082;
+  --color-steel-400: #8c95a8;
+  --color-steel-300: #bcc3d2;
+  --color-steel-200: #e2e5ec;
 
-  /* Sapphire: the secondary structural colour for diagrams and glows. */
-  --color-iris: #2e5aac;
-  --color-iris-soft: #7da6e0;
-  /* Gold: the one signal accent — CTAs, active states, the one line per
-     section that should catch the eye. */
-  --color-phosphor: #d4af37;
-  --color-phosphor-deep: #a9820a;
-  /* Gold is a signal colour, not a text colour: too light on porcelain to
-     read as copy. This deep gold carries the same meaning at 5.9:1, and is
-     the only gold allowed for text/borders on light grounds. */
-  --color-alert: #7a5c10;
+  /* Editorial Accent: Warm Terracotta & Deep Amber */
+  --color-phosphor: #d96b34;
+  --color-phosphor-deep: #b84f1d;
+  --color-alert: #9e3f14;
+  --color-ochre: #ca8a04;
+  --color-sand: #d4a373;
+
+  /* Iris / Diagram Structural Strokes */
+  --color-iris: #7b90c4;
+  --color-iris-soft: #b0bee0;
 
   /* ---- Typography ------------------------------------------------------ */
-  --font-display: var(--font-bricolage), "Segoe UI", system-ui, sans-serif;
-  --font-sans: var(--font-instrument), "Segoe UI", system-ui, sans-serif;
-  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --font-display: var(--font-bricolage), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: var(--font-instrument), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, monospace;
 
-  /* Editorial display scale (fluid) */
-  /* Sized so the hero headline, lead and primary CTA all land above the
-     fold on a laptop — the first screen has to carry the whole pitch. */
-  --text-display-xl: clamp(2.5rem, 4.6vw, 4.25rem);
-  --text-display-xl--line-height: 1;
-  --text-display-xl--letter-spacing: -0.032em;
+  /* Editorial display scale */
+  --text-display-2xl: clamp(3rem, 6.2vw, 5.25rem);
+  --text-display-xl: clamp(2.35rem, 4.4vw, 3.85rem);
+  --text-display-lg: clamp(1.85rem, 3.2vw, 2.75rem);
+  --text-display-md: clamp(1.45rem, 2.2vw, 2rem);
+  --text-display-sm: clamp(1.2rem, 1.8vw, 1.5rem);
 
-  --text-display-lg: clamp(2rem, 3.6vw, 3.25rem);
-  --text-display-lg--line-height: 1.02;
-  --text-display-lg--letter-spacing: -0.028em;
+  --text-lead: clamp(1.05rem, 1.35vw, 1.25rem);
 
-  --text-display-md: clamp(1.625rem, 2.6vw, 2.25rem);
-  --text-display-md--line-height: 1.05;
-  --text-display-md--letter-spacing: -0.025em;
-
-  --text-display-sm: clamp(1.375rem, 2.2vw, 1.75rem);
-  --text-display-sm--line-height: 1.15;
-  --text-display-sm--letter-spacing: -0.02em;
-
-  --text-lead: clamp(1.0625rem, 1.5vw, 1.3125rem);
-  --text-lead--line-height: 1.55;
-
-  --text-label: 0.6875rem;
-  --text-label--line-height: 1.2;
-  --text-label--letter-spacing: 0.18em;
-
-  /* ---- Spacing / layout ------------------------------------------------ */
-  --spacing-section: clamp(5rem, 11vh, 9rem);
-  --spacing-gutter: clamp(1.25rem, 5vw, 3rem);
+  /* ---- Spacing / Layout ------------------------------------------------ */
+  --spacing-section: clamp(4.5rem, 9vh, 8rem);
+  --spacing-gutter: clamp(1.25rem, 4vw, 2.75rem);
   --container-content: 68rem;
-  --container-wide: 84rem;
+  --container-wide: 82rem;
 
   /* ---- Radius ---------------------------------------------------------- */
   --radius-xs: 2px;
   --radius-sm: 4px;
   --radius-md: 8px;
-  --radius-lg: 14px;
-
-  /* ---- Motion ---------------------------------------------------------- */
-  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
-  --duration-fast: 180ms;
-  --duration-base: 320ms;
-  --duration-slow: 620ms;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
 }
 
 /* ==========================================================================
-   BASE
+   BASE STYLES
    ========================================================================== */
 
 :root {
@@ -100,7 +75,7 @@
 }
 
 * {
-  border-color: color-mix(in oklab, var(--color-steel-500) 18%, transparent);
+  border-color: rgba(23, 25, 32, 0.08);
 }
 
 html {
@@ -110,22 +85,36 @@ html {
 
 body {
   background-color: var(--color-porcelain);
-  color: var(--color-ink-800);
+  color: var(--color-ink-900);
   font-family: var(--font-sans);
   font-synthesis-weight: none;
   text-rendering: optimizeLegibility;
-  /* Guard rail: nothing may cause a horizontal scrollbar. */
   overflow-x: hidden;
+  /* Reserve room for the mobile contact bar plus the iOS home indicator, so
+     it can never sit on top of the last thing on a page. Only on small
+     screens, where the bar actually renders. */
+  padding-bottom: calc(3.25rem + env(safe-area-inset-bottom, 0px));
 }
 
-/* Editorial headings inherit the display face by default. */
-h1,
-h2,
-h3,
-h4 {
+@media (min-width: 1280px) {
+  body {
+    padding-bottom: 0;
+  }
+}
+
+/* Anchored sections must clear the fixed header when jumped to. */
+[id] {
+  scroll-margin-top: 6rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: 600;
+  /* Custom display sizes carry no line-height of their own, which left
+     multi-line headings with huge gaps between lines. */
+  line-height: 1.12;
   text-wrap: balance;
+  letter-spacing: -0.02em;
 }
 
 p {
@@ -134,10 +123,9 @@ p {
 
 ::selection {
   background-color: var(--color-phosphor);
-  color: var(--color-ink-900);
+  color: #ffffff;
 }
 
-/* ---- Focus: always visible, always legible on either ground ----------- */
 :focus-visible {
   outline: 2px solid var(--color-phosphor);
   outline-offset: 3px;
@@ -151,274 +139,42 @@ p {
   left: 0.75rem;
   z-index: 100;
   transform: translateY(-200%);
-  transition: transform var(--duration-fast) var(--ease-out-quint);
-  background: var(--color-ink-900);
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+  background: var(--color-ink-950);
   color: var(--color-porcelain);
   padding: 0.625rem 1rem;
   border-radius: var(--radius-sm);
   font-family: var(--font-mono);
   font-size: 0.8125rem;
 }
-.skip-link:focus-visible {
+
+.skip-link:focus {
   transform: translateY(0);
 }
 
-/* ==========================================================================
-   PRIMITIVES
-   ========================================================================== */
-
-/* Hairline rule used as a structural device throughout. */
-.hairline {
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    color-mix(in oklab, currentColor 22%, transparent),
-    color-mix(in oklab, currentColor 6%, transparent) 70%,
-    transparent
-  );
+/* Editorial subtle film grain */
+.editorial-grain {
+  background-image: radial-gradient(rgba(15, 17, 21, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-/* Fine noise, only over the dark "instrument room" grounds, to stop the
-   large violet fields from reading as flat digital paint. */
-.grain::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
-  mix-blend-mode: overlay;
+.dark-editorial-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-/* Measurement grid — the instrument-room backdrop. */
-.measure-grid::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(
-      to right,
-      color-mix(in oklab, var(--color-iris) 12%, transparent) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      to bottom,
-      color-mix(in oklab, var(--color-iris) 9%, transparent) 1px,
-      transparent 1px
-    );
-  background-size: 88px 88px;
-  mask-image: radial-gradient(
-    ellipse 80% 70% at 50% 40%,
-    black,
-    transparent 78%
-  );
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-porcelain);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-steel-300);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-steel-500);
 }
 
-/* ==========================================================================
-   MOTION — scroll reveal, driven by a single IntersectionObserver hook.
-   The page must read perfectly with motion disabled, so the reveal
-   end-state is the default and the animation only offsets from it.
-   ========================================================================== */
-
-/* The hidden state applies only where scripting is available to undo it, so
-   content is never left stranded at opacity 0. Browsers without the
-   `scripting` feature simply render everything visible — no animation, no
-   hidden content, and no hydration-breaking class toggle on <html>. */
-@media (scripting: enabled) {
-  [data-reveal] {
-    opacity: 0;
-    transform: translateY(18px);
-    transition:
-      opacity var(--duration-slow) var(--ease-out-quint),
-      transform var(--duration-slow) var(--ease-out-quint);
-    transition-delay: var(--reveal-delay, 0ms);
-  }
-  [data-reveal="in"] {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* ==========================================================================
-   Hero backdrop — ambient network + growth line.
-   ========================================================================== */
-
-.hero-backdrop-svg {
-  opacity: 0.9;
-}
-
-.hb-node-pulse {
-  animation: hb-pulse 3.4s ease-in-out infinite;
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-@keyframes hb-pulse {
-  0%,
-  100% {
-    opacity: 0.55;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.6);
-  }
-}
-
-.hb-growth-line {
-  stroke-dasharray: 90;
-  stroke-dashoffset: 90;
-  animation: hb-draw 2.4s var(--ease-out-quint) 0.2s forwards;
-}
-
-@keyframes hb-draw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hb-node-pulse {
-    animation: none;
-  }
-  .hb-growth-line {
-    animation: none;
-    stroke-dashoffset: 0;
-  }
-}
-
-/* ==========================================================================
-   SIGNATURE — hero signal instrument.
-   Animated entirely in CSS so the hero costs no client JavaScript.
-   ========================================================================== */
-
-.sig {
-  --sig-cycle: 6.6s;
-  color: var(--color-steel-300);
-}
-
-/* The sweep travels the full width, once per cycle. */
-.sig-sweep {
-  animation: sig-sweep var(--sig-cycle) linear infinite;
-}
-
-@keyframes sig-sweep {
-  from {
-    transform: translateX(6px);
-  }
-  to {
-    transform: translateX(560px);
-  }
-}
-
-/* Bars rest low, then rise as the sweep reaches their band. */
-.sig-bar {
-  transform-box: fill-box;
-  transform-origin: bottom;
-  transform: scaleY(0.34);
-  animation: sig-rise var(--sig-cycle) var(--ease-out-quint) infinite;
-  animation-delay: calc(var(--band-delay, 0s) + var(--bar-delay, 0ms));
-}
-
-@keyframes sig-rise {
-  0% {
-    transform: scaleY(0.34);
-  }
-  8% {
-    transform: scaleY(1);
-  }
-  38% {
-    transform: scaleY(0.86);
-  }
-  100% {
-    transform: scaleY(0.34);
-  }
-}
-
-/* Labels light in phosphor as their stage is read. */
-.sig-code,
-.sig-label,
-.sig-tick {
-  animation: sig-light var(--sig-cycle) var(--ease-out-quint) infinite;
-  animation-delay: var(--band-delay, 0s);
-}
-
-@keyframes sig-light {
-  0%,
-  100% {
-    fill: var(--color-steel-300);
-    stroke: var(--color-steel-300);
-    opacity: 0.6;
-  }
-  8%,
-  30% {
-    fill: var(--color-phosphor);
-    stroke: var(--color-phosphor);
-    opacity: 1;
-  }
-}
-
-/* Static, fully legible reading when motion is not wanted. */
-@media (prefers-reduced-motion: reduce) {
-  .sig-sweep {
-    display: none;
-  }
-  .sig-bar {
-    animation: none;
-    transform: scaleY(1);
-  }
-  .sig-code,
-  .sig-label,
-  .sig-tick {
-    animation: none;
-    opacity: 1;
-  }
-}
-
-/* Process rail: the connector fills and the dot lights as its step is
-   revealed, reusing the reveal state rather than tracking scroll position. */
-.rail-fill {
-  transform-origin: top;
-  transform: scaleY(0);
-  transition: transform var(--duration-slow) var(--ease-out-quint) 120ms;
-}
-[data-reveal="in"] .rail-fill {
-  transform: scaleY(1);
-}
-
-.rail-dot {
-  transform: scale(0);
-  transition: transform var(--duration-base) var(--ease-out-quint);
-}
-[data-reveal="in"] .rail-dot {
-  transform: scale(1);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .rail-fill,
-  .rail-dot {
-    transform: none;
-  }
-  .rail-fill {
-    transform: scaleY(1);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-  [data-reveal] {
-    opacity: 1;
-    transform: none;
-  }
-}

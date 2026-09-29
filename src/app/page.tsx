@@ -1,38 +1,48 @@
+import type { Metadata } from "next";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
-import { GrowthFocus } from "@/components/site/GrowthFocus";
-import { Services } from "@/components/site/Services";
-import { WhyWorkWithMe } from "@/components/site/WhyWorkWithMe";
-import { BusinessProblems } from "@/components/site/BusinessProblems";
-import { Process } from "@/components/site/Process";
 import { About } from "@/components/site/About";
-import { Trust } from "@/components/site/Trust";
-import { CTA } from "@/components/site/CTA";
-import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
+import { FinalCTA } from "@/components/site/FinalCTA";
+import {
+  AiAdvantage,
+  CoreExpertise,
+  Outcomes,
+  SelectedServices,
+  WhyWork,
+} from "@/components/site/HomeSections";
+import { generateBreadcrumbSchema } from "@/lib/schema";
 
-/**
- * Section order follows the argument the page is making:
- * problem → focus → what I do → how I think → what I can solve for you →
- * how the work runs → who I am → how I stay accountable → let's talk.
- */
+export const metadata: Metadata = {
+  title: { absolute: "AI Digital Marketing & Growth Strategy | Mohammed Aouf, Ambur, Tamil Nadu" },
+  description:
+    "AI-powered digital marketing built for measurable growth: SEO, AEO, GEO, performance marketing, social media and automation. Mohammed Aouf, Ambur, Tamil Nadu.",
+  alternates: { canonical: "/" },
+};
+
 export default function HomePage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([{ name: "Home", url: "/" }]);
+
   return (
     <>
       <Navbar />
       <main>
         <Hero />
-        <GrowthFocus />
-        <Services />
-        <WhyWorkWithMe />
-        <BusinessProblems />
-        <Process />
+        <CoreExpertise />
+        <WhyWork />
+        <SelectedServices />
+        <AiAdvantage />
+        <Outcomes />
         <About />
-        <Trust />
-        <CTA />
-        <Contact />
+        <FinalCTA />
       </main>
       <Footer />
+
+      {/* Person and business schema are already emitted once by the root layout. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
     </>
   );
 }

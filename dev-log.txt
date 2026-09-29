@@ -1,0 +1,281 @@
+▲ Next.js 16.3.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.31.59:3000
+✓ Ready in 542ms
+✓ Running next.config.ts took 40ms
+
+ GET /projects 200 in 551ms (next.js: 301ms, application-code: 251ms)
+ GET / 200 in 562ms (next.js: 67ms, application-code: 495ms)
+ GET / 200 in 213ms (next.js: 10ms, application-code: 203ms)
+ GET /blog 200 in 194ms (next.js: 37ms, application-code: 156ms)
+ GET /blog/what-is-ai-digital-marketing 200 in 736ms (next.js: 40ms, generate-params: 586ms, application-code: 109ms)
+ GET /seo-services-ambur 200 in 127ms (next.js: 27ms, application-code: 100ms)
+ GET /contact 200 in 124ms (next.js: 33ms, application-code: 91ms)
+[browser] Image with src "/mohammed-aouf.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+ GET / 200 in 244ms (next.js: 11ms, application-code: 233ms)
+✓ Compiled in 162ms
+ GET / 200 in 312ms (next.js: 21ms, application-code: 291ms)
+ GET / 200 in 176ms (next.js: 16ms, application-code: 160ms)
+✓ Compiled in 210ms
+ GET / 200 in 278ms (next.js: 15ms, application-code: 262ms)
+ GET / 200 in 278ms (next.js: 125ms, application-code: 153ms)
+⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+▲ Next.js 16.3.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.31.59:3000
+✓ Ready in 879ms
+✓ Running next.config.ts took 66ms
+
+ GET / 200 in 1034ms (next.js: 528ms, application-code: 506ms)
+ GET / 200 in 108ms (next.js: 17ms, application-code: 91ms)
+ GET / 200 in 213ms (next.js: 33ms, application-code: 179ms)
+ GET /projects 200 in 172ms (next.js: 42ms, application-code: 130ms)
+ GET / 200 in 200ms (next.js: 38ms, application-code: 163ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RedirectErrorBoundary router={{...}}>
+      <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+        <SegmentViewNode type="page" pagePath="page.tsx">
+          <SegmentTrieNode>
+          <HomePage>
+            <Navbar>
+            <main>
+              <section>
+              <section>
+              <section>
+              <section>
+              <section>
+              <section>
+              <section>
+              <section>
+              <section>
+              <section>
+              <section>
+              <section>
+              <section>
+              <Contact>
+                <section id="contact" aria-labelledby="contact-he..." className="bg-porcela...">
+                  <Container>
+                    <div className="mx-auto w-...">
+                      <div className="grid gap-1...">
+                        <div>
+                        <div className="rounded-3x...">
+                          <EnquiryForm>
+                            <form onSubmit={function} noValidate={true} className="relative b...">
+                              <div className="grid gap-5...">
+                                <Field id="name" label="Name" error={undefined}>
+                                  <div className="flex flex-...">
+                                    <label>
+                                    <input
+                                      id="name"
+                                      type="text"
+                                      autoComplete="name"
+                                      placeholder="Your name"
+                                      aria-invalid={false}
+                                      aria-describedby={undefined}
+                                      className="w-full rounded-sm border bg-porcelain-raised px-4 py-3 text-[0.9375re..."
+                                      name="name"
+                                      onChange={function onChange}
+                                      onBlur={function onChange}
+                                      ref={function ref}
+-                                     fdprocessedid="t9ztde"
+                                    >
+                                <Field id="email" label="Email" error={undefined}>
+                                  <div className="flex flex-...">
+                                    <label>
+                                    <input
+                                      id="email"
+                                      type="email"
+                                      inputMode="email"
+                                      autoComplete="email"
+                                      placeholder="you@company.com"
+                                      aria-invalid={false}
+                                      aria-describedby={undefined}
+                                      className="w-full rounded-sm border bg-porcelain-raised px-4 py-3 text-[0.9375re..."
+                                      name="email"
+                                      onChange={function onChange}
+                                      onBlur={function onChange}
+                                      ref={function ref}
+-                                     fdprocessedid="bcl59g"
+                                    >
+                                <Field id="phone" label="Phone / Wh..." optional={true} error={undefined}>
+                                  <div className="flex flex-...">
+                                    <label>
+                                    <input
+                                      id="phone"
+                                      type="tel"
+                                      inputMode="tel"
+                                      autoComplete="tel"
+                                      placeholder="+91 98765 43210"
+                                      aria-invalid={false}
+                                      aria-describedby={undefined}
+                                      className="w-full rounded-sm border bg-porcelain-raised px-4 py-3 text-[0.9375re..."
+                                      name="phone"
+                                      onChange={function onChange}
+                                      onBlur={function onChange}
+                                      ref={function ref}
+-                                     fdprocessedid="6up9z"
+                                    >
+                                <Field id="business" label="Business /..." optional={true} error={undefined}>
+                                  <div className="flex flex-...">
+                                    <label>
+                                    <input
+                                      id="business"
+                                      type="text"
+                                      autoComplete="organization"
+                                      placeholder="Company or brand name"
+                                      aria-invalid={false}
+                                      className="w-full rounded-sm border bg-porcelain-raised px-4 py-3 text-[0.9375re..."
+                                      name="business"
+                                      onChange={function onChange}
+                                      onBlur={function onChange}
+                                      ref={function ref}
+-                                     fdprocessedid="tthzoa"
+                                    >
+                                <Field id="website" label="Website" optional={true} error={undefined}>
+                                  <div className="flex flex-...">
+                                    <label>
+                                    <input
+                                      id="website"
+                                      type="text"
+                                      inputMode="url"
+                                      autoComplete="url"
+                                      placeholder="yourbusiness.com"
+                                      aria-invalid={false}
+                                      className="w-full rounded-sm border bg-porcelain-raised px-4 py-3 text-[0.9375re..."
+                                      name="website"
+                                      onChange={function onChange}
+                                      onBlur={function onChange}
+                                      ref={function ref}
+-                                     fdprocessedid="w43jpw"
+                                    >
+                                <Field id="help" label="What do yo..." error={undefined} className="sm:col-span-2">
+                                  <div className="flex flex-...">
+                                    <label>
+                                    <select
+                                      id="help"
+                                      aria-invalid={false}
+                                      aria-describedby={undefined}
+                                      className="w-full rounded-sm border bg-porcelain-raised px-4 py-3 text-[0.9375re..."
+                                      defaultValue=""
+                                      name="help"
+                                      onChange={function onChange}
+                                      onBlur={function onChange}
+                                      ref={function ref}
+-                                     fdprocessedid="ctjaln"
+                                    >
+                                <Field id="budget" label="Budget / T..." optional={true} hint="A rough ra..." ...>
+                                  <div className="flex flex-...">
+                                    <label>
+                                    <input
+                                      id="budget"
+                                      type="text"
+                                      placeholder="e.g. ₹15,000/month, ready to start in 2 weeks"
+                                      aria-invalid={false}
+                                      aria-describedby="budget-hint"
+                                      className="w-full rounded-sm border bg-porcelain-raised px-4 py-3 text-[0.9375re..."
+                                      name="budget"
+                                      onChange={function onChange}
+                                      onBlur={function onChange}
+                                      ref={function ref}
+-                                     fdprocessedid="z0lrrd"
+                                    >
+                                    ...
+                                ...
+                              <div className="mt-7 flex ...">
+                                <Button type="submit" size="lg" disabled={false} className="whitespace..." arrow={true}>
+                                  <button
+                                    className="group relative inline-flex items-center justify-center gap-2.5 rounded-..."
+                                    type="submit"
+                                    disabled={false}
+-                                   fdprocessedid="hhg715"
+                                  >
+                                ...
+                              ...
+            ...
+        ...
+      ...
+ 
+ GET / 200 in 166ms (next.js: 18ms, application-code: 148ms)
+ GET / 200 in 147ms (next.js: 27ms, application-code: 120ms)
+ GET / 200 in 191ms (next.js: 18ms, application-code: 173ms)
+✓ Compiled in 60ms
+ GET / 200 in 438ms (next.js: 18ms, application-code: 421ms)
+ GET / 200 in 202ms (next.js: 9ms, application-code: 193ms)
+✓ Compiled in 114ms
+ GET / 200 in 300ms (next.js: 21ms, application-code: 279ms)
+ GET / 200 in 167ms (next.js: 11ms, application-code: 156ms)
+ GET / 200 in 241ms (next.js: 121ms, application-code: 120ms)
+ GET / 200 in 242ms (next.js: 20ms, application-code: 222ms)
+ GET / 200 in 250ms (next.js: 4ms, application-code: 247ms)
+ GET /contact 200 in 100ms (next.js: 54ms, application-code: 46ms)
+ GET /blog 200 in 118ms (next.js: 51ms, application-code: 67ms)
+ GET /projects 200 in 71ms (next.js: 28ms, application-code: 43ms)
+ GET /ai-digital-marketing-ambur 200 in 121ms (next.js: 42ms, application-code: 78ms)
+ GET / 200 in 96ms (next.js: 4ms, application-code: 92ms)
+ GET /about-mohammed-aouf 200 in 80ms (next.js: 36ms, application-code: 44ms)
+ GET / 200 in 98ms (next.js: 5ms, application-code: 93ms)
+ GET /blog 200 in 63ms (next.js: 5ms, application-code: 58ms)
+ GET /contact 200 in 42ms (next.js: 5ms, application-code: 37ms)
+ GET /about-mohammed-aouf 200 in 39ms (next.js: 5ms, application-code: 34ms)
+ GET / 200 in 85ms (next.js: 5ms, application-code: 80ms)
+ GET / 200 in 205ms (next.js: 99ms, application-code: 106ms)
+ GET / 200 in 206ms (next.js: 13ms, application-code: 193ms)
+ GET / 200 in 201ms (next.js: 91ms, application-code: 110ms)
+ GET / 200 in 200ms (next.js: 13ms, application-code: 188ms)
+✓ Compiled in 98ms
+ GET / 200 in 172ms (next.js: 71ms, application-code: 102ms)
+ GET / 200 in 174ms (next.js: 10ms, application-code: 164ms)
+ GET / 200 in 238ms (next.js: 7ms, application-code: 232ms)
+ GET / 200 in 212ms (next.js: 4ms, application-code: 208ms)
+ GET / 200 in 328ms (next.js: 11ms, application-code: 318ms)
+ GET /about-mohammed-aouf 200 in 46ms (next.js: 6ms, application-code: 40ms)
+ GET / 200 in 100ms (next.js: 6ms, application-code: 95ms)
+ GET /ai-digital-marketing-ambur 200 in 55ms (next.js: 6ms, application-code: 49ms)
+ GET /projects 200 in 43ms (next.js: 8ms, application-code: 35ms)
+ GET /blog 200 in 59ms (next.js: 6ms, application-code: 53ms)
+ GET /ai-digital-marketing-ambur 200 in 45ms (next.js: 4ms, application-code: 41ms)
+ GET /blog 200 in 58ms (next.js: 5ms, application-code: 53ms)
+ GET /contact 200 in 63ms (next.js: 21ms, application-code: 41ms)
+ GET /ai-digital-marketing-ambur 200 in 44ms (next.js: 4ms, application-code: 40ms)
+ GET / 200 in 77ms (next.js: 9ms, application-code: 68ms)
+ GET /about-mohammed-aouf 200 in 47ms (next.js: 5ms, application-code: 42ms)
+ GET / 200 in 79ms (next.js: 6ms, application-code: 73ms)
+ GET / 200 in 11ms (next.js: 4ms, application-code: 7ms)
+ GET / 200 in 80ms (next.js: 5ms, application-code: 75ms)
+ GET / 200 in 12ms (next.js: 5ms, application-code: 7ms)
+ GET / 200 in 92ms (next.js: 4ms, application-code: 88ms)
+ GET / 200 in 13ms (next.js: 4ms, application-code: 9ms)
+ GET / 200 in 100ms (next.js: 4ms, application-code: 96ms)
+ GET / 200 in 32ms (next.js: 22ms, application-code: 9ms)
+ GET / 200 in 89ms (next.js: 6ms, application-code: 82ms)
+ GET / 200 in 14ms (next.js: 6ms, application-code: 8ms)
+ GET / 200 in 83ms (next.js: 7ms, application-code: 76ms)
+ GET / 200 in 15ms (next.js: 7ms, application-code: 8ms)
+ GET / 200 in 91ms (next.js: 5ms, application-code: 86ms)
+ GET / 200 in 14ms (next.js: 5ms, application-code: 8ms)
+ GET / 200 in 90ms (next.js: 5ms, application-code: 85ms)
+ GET / 200 in 13ms (next.js: 4ms, application-code: 8ms)
+ GET / 200 in 82ms (next.js: 4ms, application-code: 78ms)
+ GET /ai-digital-marketing-ambur 200 in 61ms (next.js: 14ms, application-code: 47ms)
+ GET /projects 200 in 41ms (next.js: 11ms, application-code: 30ms)
+ GET / 200 in 83ms (next.js: 5ms, application-code: 79ms)
+ GET / 200 in 12ms (next.js: 5ms, application-code: 7ms)
+ GET / 200 in 82ms (next.js: 7ms, application-code: 75ms)
+ GET / 200 in 13ms (next.js: 5ms, application-code: 8ms)
+ GET / 200 in 86ms (next.js: 4ms, application-code: 81ms)
+ GET /blog 200 in 67ms (next.js: 19ms, application-code: 48ms)
+ GET /contact 200 in 47ms (next.js: 10ms, application-code: 37ms)
+ GET / 200 in 86ms (next.js: 5ms, application-code: 81ms)

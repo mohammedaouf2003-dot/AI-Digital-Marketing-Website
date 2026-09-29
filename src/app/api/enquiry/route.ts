@@ -59,7 +59,14 @@ export async function POST(request: Request) {
     );
   }
 
-  const { name, email, business, website, help, message } = parsed.data;
+  const { name, email, phone, business, website, help, message, budget, company_website } =
+    parsed.data;
+
+  // Honeypot tripped. Report success so the bot has nothing to tune against,
+  // but send nothing.
+  if (company_website) {
+    return NextResponse.json({ ok: true });
+  }
 
   const apiKey = process.env.RESEND_API_KEY;
   // The verified sending domain, e.g. "Enquiries <hello@mohammedaouf.com>".
@@ -71,7 +78,7 @@ export async function POST(request: Request) {
     // tell the visitor plainly rather than showing a fake success.
     console.error(
       "[enquiry] Email is not configured (RESEND_API_KEY / ENQUIRY_FROM missing). Enquiry received:",
-      { name, email, business, website, help, message },
+      { name, email, phone, business, website, help, message, budget },
     );
     return NextResponse.json(
       {
@@ -85,9 +92,11 @@ export async function POST(request: Request) {
   const rows: [string, string][] = [
     ["Name", name],
     ["Email", email],
+    ["Phone / WhatsApp", phone || "—"],
     ["Business", business || "—"],
     ["Website", website || "—"],
     ["Needs help with", help],
+    ["Budget / timeline", budget || "—"],
   ];
 
   const html = `

@@ -7,6 +7,7 @@ import { contact } from "@/lib/content";
 import { enquirySchema, type Enquiry } from "@/lib/enquiry-schema";
 import { Button } from "@/components/ui/Button";
 import { Field, inputClasses } from "@/components/ui/Field";
+import { trackEvent } from "@/lib/analytics";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -25,10 +26,13 @@ export function EnquiryForm() {
     defaultValues: {
       name: "",
       email: "",
+      phone: "",
       business: "",
       website: "",
       help: "",
       message: "",
+      budget: "",
+      company_website: "",
     },
   });
 
@@ -51,9 +55,11 @@ export function EnquiryForm() {
       }
 
       setStatus("sent");
+      trackEvent("form_submit", { service: values.help || "unspecified" });
       reset();
     } catch (error) {
       setStatus("error");
+      trackEvent("form_error");
       setServerError(
         error instanceof Error
           ? error.message
@@ -97,7 +103,7 @@ export function EnquiryForm() {
     <form
       onSubmit={handleSubmit(onSubmit)}
       noValidate
-      className="border border-ink-800/15 bg-porcelain-raised p-6 sm:p-8 lg:p-10"
+      className="relative border border-ink-800/15 bg-porcelain-raised p-6 sm:p-8 lg:p-10"
     >
       <div className="grid gap-5 sm:grid-cols-2">
         <Field id="name" label="Name" error={errors.name?.message}>
@@ -128,8 +134,27 @@ export function EnquiryForm() {
         </Field>
 
         <Field
+          id="phone"
+          label="Phone / WhatsApp"
+          optional
+          error={errors.phone?.message}
+        >
+          <input
+            id="phone"
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
+            placeholder="+91 98765 43210"
+            aria-invalid={!!errors.phone}
+            aria-describedby={errors.phone ? "phone-error" : undefined}
+            className={inputClasses(!!errors.phone)}
+            {...register("phone")}
+          />
+        </Field>
+
+        <Field
           id="business"
-          label="Business"
+          label="Business / Organization"
           optional
           error={errors.business?.message}
         >
@@ -188,8 +213,26 @@ export function EnquiryForm() {
         </Field>
 
         <Field
+          id="budget"
+          label="Budget / Timeline"
+          optional
+          hint="A rough range is enough — it helps me recommend the right starting point."
+          error={errors.budget?.message}
+        >
+          <input
+            id="budget"
+            type="text"
+            placeholder="e.g. ₹15,000/month, ready to start in 2 weeks"
+            aria-invalid={!!errors.budget}
+            aria-describedby={errors.budget ? "budget-error" : "budget-hint"}
+            className={inputClasses(!!errors.budget)}
+            {...register("budget")}
+          />
+        </Field>
+
+        <Field
           id="message"
-          label="Message"
+          label="Project Details"
           hint="What are you trying to improve, and what have you tried so far?"
           error={errors.message?.message}
           className="sm:col-span-2"
@@ -206,6 +249,19 @@ export function EnquiryForm() {
             {...register("message")}
           />
         </Field>
+
+        {/* Honeypot. Hidden from sight and from assistive technology, so only
+            an automated filler will ever populate it. */}
+        <div aria-hidden="true" className="absolute h-0 w-0 overflow-hidden">
+          <label htmlFor="company_website">Company website</label>
+          <input
+            id="company_website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            {...register("company_website")}
+          />
+        </div>
       </div>
 
       {serverError ? (
